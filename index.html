@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Práctica con voz: preguntas iniciales de clientes sobre el crédito (prueba)</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #363837; background: #ffffff; }
+  main { max-width: 44rem; margin: 0 auto; padding: 1.25rem; }
+  h1 { font-size: 1.3rem; margin: 0 0 .6rem; }
+  h1::after { content: ""; display: block; width: 3rem; height: 4px; margin-top: .45rem; background: #FF6900; border-radius: 2px; }
+  p, li { font-size: .95rem; line-height: 1.5; }
+  ol { padding-left: 1.2rem; margin: .5rem 0 1rem; }
+  .nota { border-left: 4px solid #FF6900; background: #f6f6f6; padding: .7rem 1rem; border-radius: .25rem; font-size: .88rem; }
+  #aviso-falla { display: none; margin-top: 1rem; padding: .7rem 1rem; border: 1px solid #c0392b; border-radius: .25rem; color: #c0392b; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Práctica con voz: preguntas iniciales sobre el crédito</h1>
+  <p>Practica cómo responderías a las preguntas iniciales de un cliente sobre el crédito. Conversas en voz alta con el asistente, que hace el papel del cliente.</p>
+  <ol>
+    <li>Pulsa el botón del asistente (abajo a la derecha) para empezar.</li>
+    <li>Cuando el navegador pregunte, permite el uso del micrófono.</li>
+    <li>Habla con naturalidad. Para terminar, pulsa «Terminar».</li>
+  </ol>
+  <p class="nota"><strong>Antes de empezar:</strong> esta es una prueba interna. Tu voz se envía a un servicio externo (ElevenLabs) para poder conversar contigo, y la conversación puede guardarse para revisarla. No menciones datos personales de clientes reales.</p>
+  <p id="aviso-falla" role="alert">No se pudo cargar el asistente de voz. Revisa tu conexión y recarga la página. Si sigue igual, avisa al equipo de capacitación.</p>
+
+  <elevenlabs-convai agent-id="agent_5101m5qw4chwfxtbs6e5m1mz6wy8" variant="expanded"></elevenlabs-convai>
+  <!-- Versión FIJA a propósito: este paquete publica versiones nuevas casi a diario. No la cambies sin probar. -->
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed@0.21.5" async type="text/javascript"></script>
+</main>
+<script>
+  setTimeout(function () { if (!customElements.get('elevenlabs-convai')) document.getElementById('aviso-falla').style.display = 'block' }, 8000)
+</script>
+</body>
+</html>
